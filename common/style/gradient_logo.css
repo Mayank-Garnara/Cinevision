@@ -1,0 +1,28 @@
+.cinevision-logo {
+    margin: 15px;
+    font-size: 52px;
+    /* Adjust the size of the text */
+    font-weight: bold;
+    font-family: Baskerville Old Face;
+    background: linear-gradient(90deg, #ff1b6b, #45cafc, #ffc107, #00e676);
+    background-size: 400% 400%;
+    /* Make the gradient large to show animation */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 6s infinite;
+    /* Apply the animation */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

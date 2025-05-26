@@ -1,0 +1,88 @@
+
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -400px; /* Initially off-screen */
+    min-width: 300px;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+
+    /* Transition for sliding and fading */
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+/* SVG styles for the cross animation */
+.cross {
+    width: 30px;
+    height: 30px;
+    display: block;
+    stroke-width: 4;
+    stroke: white;
+    stroke-miterlimit: 10;
+    margin: auto;
+    box-shadow: inset 0px 0px 0px white;
+    animation: scale-in 0.3s ease-in-out forwards;
+}
+
+.cross-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 4;
+    stroke: white;
+    fill: none;
+    animation: stroke-circle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.cross-line {
+    stroke-dasharray: 44;
+    stroke-dashoffset: 44;
+    animation: stroke-cross 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+/* Keyframes for drawing animations */
+@keyframes stroke-circle {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes stroke-cross {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Visible notification */
+.notification.visible {
+    right: 20px; /* Slide in from the right */
+    opacity: 1;  /* Fade in */
+}
+
+/* Hidden notification */
+.notification.hidden {
+    right: -400px; /* Slide out */
+    opacity: 0;   /* Fade out */
+}
