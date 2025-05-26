@@ -1,1 +1,1 @@
-FFMPEG Software will ne needed to run project
+FFMPEG Software will be needed to run project
